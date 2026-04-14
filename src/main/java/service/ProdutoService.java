@@ -23,5 +23,21 @@ public class ProdutoService {
     public List<Produto> listarEstoqueCritico(int limite) {
         // Lógica de negócio: o que o sistema considera "estoque crítico"
         return dao.findByEstoqueAbaixo(limite);
+    } 
+    
+    // método que calcula o valor total do estoque
+public double calcularValorTotalEstoque(Produto p) {
+    if (p.getEstoque() < 0) {
+        throw new IllegalArgumentException("Estoque não pode ser negativo");
     }
+    return p.getValor() * p.getEstoque();
+}
+
+// Método para o teste unitário (UC de Testes)
+public double calcularValorTotalEstoque(double valor, int quantidade) {
+    if (quantidade < 0) {
+        throw new IllegalArgumentException("Quantidade não pode ser negativa");
+    }
+    return valor * quantidade;
+}
 }
