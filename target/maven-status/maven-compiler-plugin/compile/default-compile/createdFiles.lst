@@ -1,0 +1,6 @@
+persistence\UsuarioDAO.class
+persistence\FornecedorDAO.class
+persistence\ProdutoDAO.class
+test\Principal.class
+service\ProdutoService.class
+persistence\JPAUtil.class
